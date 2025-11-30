@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="𝙅𝙍|Fahrenight¹⁹³³☪ - Elite Developer Portfolio">
+    <meta name="theme-color" content="#8B00D9">
+    
+    <title>𝙅𝙍|Fahrenight¹⁹³³☪ - Elite Portfolio</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="avatar.jpg">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="cyber-loader">
+                <div class="cyber-ring"></div>
+                <div class="cyber-ring"></div>
+                <div class="cyber-ring"></div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-percentage">0</span>%
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-message">Initializing Quantum Systems...</p>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settingsPanel">
+        <button class="settings-toggle" id="settingsToggle">
+            <i class="fas fa-cog"></i>
+        </button>
+        <div class="settings-content">
+            <h3>Customization</h3>
+            
+            <div class="setting-group">
+                <label>Theme</label>
+                <div class="theme-switcher">
+                    <button class="theme-btn active" data-theme="dark">
+                        <i class="fas fa-moon"></i> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light">
+                        <i class="fas fa-sun"></i> Light
+                    </button>
+                    <button class="theme-btn" data-theme="cyber">
+                        <i class="fas fa-robot"></i> Cyber
+                    </button>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Color Scheme</label>
+                <div class="color-picker">
+                    <button class="color-btn" data-color="purple" style="background: #8B00D9"></button>
+                    <button class="color-btn" data-color="blue" style="background: #00A8FF"></button>
+                    <button class="color-btn" data-color="green" style="background: #00FF88"></button>
+                    <button class="color-btn" data-color="red" style="background: #FF006E"></button>
+                    <button class="color-btn" data-color="gold" style="background: #FFD700"></button>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Particles</label>
+                <label class="switch">
+                    <input type="checkbox" id="particlesToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label>Sound Effects</label>
+                <label class="switch">
+                    <input type="checkbox" id="soundToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label>Animations</label>
+                <label class="switch">
+                    <input type="checkbox" id="animationsToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">JR|F</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i><span>About</span></a></li>
+                <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
+                <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i><span>Skills</span></a></li>
+                <li><a href="#services" class="nav-link"><i class="fas fa-cogs"></i><span>Services</span></a></li>
+                <li><a href="#projects" class="nav-link"><i class="fas fa-rocket"></i><span>Projects</span></a></li>
+                <li><a href="#blog" class="nav-link"><i class="fas fa-blog"></i><span>Blog</span></a></li>
+                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="audio-toggle" id="audioToggle">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Shooting Stars -->
+    <div class="shooting-stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-avatar">
+                <div class="avatar-container">
+                    <img src="avatar.jpg" alt="Profile" class="avatar-image">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-ring"></div>
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Available for hire</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-text">
+                <div class="greeting" data-aos="fade-down">
+                    <span class="wave">👋</span> Hello, I'm
+                </div>
+                
+                <h1 class="hero-title" data-aos="fade-up">
+                    <span class="glitch-text" data-text="𝙅𝙍|Fahrenheit¹⁹³³☪">𝙅𝙍|Fahrenheit¹⁹³³☪</span>
+                </h1>
+
+                <div class="title-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <span class="title-prefix">I am a </span>
+                    <span class="typing-wrapper">
+                        <span class="dynamic-text"></span>
+                        <span class="typing-cursor">|</span>
+                    </span>
+                </div>
+
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                    Elite Full-Stack Developer crafting exceptional digital experiences with cutting-edge technologies. 
+                    Based in <i class="fas fa-location-dot"></i> <span class="highlight">Germany</span>
+                </p>
+
+                <div class="hero-badges" data-aos="fade-up" data-aos-delay="600">
+                    <span class="elite-badge">
+                        <i class="fas fa-bolt"></i> VIP Elite
+                    </span>
+                    <span class="elite-badge">
+                        <i class="fas fa-code"></i> Full Stack
+                    </span>
+                    <span class="elite-badge">
+                        <i class="fas fa-shield-halved"></i> Guard
+                    </span>
+                    <span class="elite-badge">
+                        <i class="fas fa-trophy"></i> Top Rated
+                    </span>
+                </div>
+
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="800">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="469">0</div>
+                        <div class="stat-label">Profile Views</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Projects Done</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Years XP</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
+
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="1000">
+                    <a href="#projects" class="cta-btn primary-btn">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="cta-btn secondary-btn">
+                        <span>Hire Me</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+
+                <div class="social-links" data-aos="fade-up" data-aos-delay="1200">
+                    <a href="javascript:void(0)" onclick="copyDiscord('tr_aytekin')" class="social-link discord" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="https://steamcommunity.com/profiles/76561199172430315/" target="_blank" class="social-link steam" title="Steam">
+                        <i class="fab fa-steam"></i>
+                    </a>
+                    <a href="https://github.com/ZradoW" target="_blank" class="social-link github" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link twitter" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link linkedin" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate developer with a drive for innovation</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="image-wrapper">
+                        <img src="avatar.jpg" alt="About Me">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-decoration">
+                        <div class="deco-circle"></div>
+                        <div class="deco-dots"></div>
+                    </div>
+                </div>
+
+                <div class="about-info" data-aos="fade-left">
+                    <div class="info-card">
+                        <h3>Who Am I?</h3>
+                        <p>
+                            I'm a <strong>Full-Stack Developer</strong> and <strong>Creative Technologist</strong> 
+                            based in Germany 🇩🇪. With over 5 years of experience, I specialize in building 
+                            high-performance web applications and stunning user interfaces.
+                        </p>
+                        <p>
+                            My journey in tech started with a passion for solving complex problems and creating 
+                            innovative solutions. Today, I work with cutting-edge technologies to bring ideas to life.
+                        </p>
+                    </div>
+
+                    <div class="info-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Education</h4>
+                                <p>Computer Science & Engineering</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h4>Experience</h4>
+                                <p>5+ Years in Development</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Germany (Remote Available)</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Contact</h4>
+                                <p>tr_aytekin (Discord)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-actions">
+                        <a href="#contact" class="info-btn">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="#contact" class="info-btn outline">
+                            <i class="fas fa-comment"></i> Let's Talk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">My Journey</span>
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">Professional milestones and achievements</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Present</span>
+                        <h3>Senior Full-Stack Developer</h3>
+                        <h4>Elite Tech Solutions</h4>
+                        <p>Leading development of enterprise-scale applications using React, Node.js, and cloud technologies.</p>
+                        <div class="timeline-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>AWS</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - 2023</span>
+                        <h3>Full-Stack Developer</h3>
+                        <h4>Digital Innovators GmbH</h4>
+                        <p>Developed and maintained multiple client projects, focusing on performance optimization and user experience.</p>
+                        <div class="timeline-tags">
+                            <span>Vue.js</span>
+                            <span>Python</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2019 - 2021</span>
+                        <h3>Frontend Developer</h3>
+                        <h4>Creative Web Studio</h4>
+                        <p>Created responsive and interactive web interfaces for various startups and businesses.</p>
+                        <div class="timeline-tags">
+                            <span>JavaScript</span>
+                            <span>CSS3</span>
+                            <span>HTML5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What I Do Best</span>
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">Mastering the art of modern development</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Frontend Skills -->
+                <div class="skill-category" data-aos="zoom-in">
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>HTML5 & CSS3</span>
+                                <span class="skill-percent">98%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="98%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>JavaScript/TypeScript</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>React.js</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Vue.js</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="category-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Node.js</span>
+                                <span class="skill-percent">93%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="93%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Python</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>MongoDB</span>
+                                <span class="skill-percent">87%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="87%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>PostgreSQL</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Others -->
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & DevOps</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Git & GitHub</span>
+                                <span class="skill-percent">96%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="96%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Docker</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>AWS</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>CI/CD</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Icons -->
+            <div class="tech-stack" data-aos="fade-up">
+                <h3>Technologies I Work With</h3>
+                <div class="tech-icons">
+                    <div class="tech-icon" title="HTML5"><i class="fab fa-html5"></i></div>
+                    <div class="tech-icon" title="CSS3"><i class="fab fa-css3-alt"></i></div>
+                    <div class="tech-icon" title="JavaScript"><i class="fab fa-js"></i></div>
+                    <div class="tech-icon" title="React"><i class="fab fa-react"></i></div>
+                    <div class="tech-icon" title="Vue.js"><i class="fab fa-vuejs"></i></div>
+                    <div class="tech-icon" title="Node.js"><i class="fab fa-node-js"></i></div>
+                    <div class="tech-icon" title="Python"><i class="fab fa-python"></i></div>
+                    <div class="tech-icon" title="Docker"><i class="fab fa-docker"></i></div>
+                    <div class="tech-icon" title="Git"><i class="fab fa-git-alt"></i></div>
+                    <div class="tech-icon" title="GitHub"><i class="fab fa-github"></i></div>
+                    <div class="tech-icon" title="AWS"><i class="fab fa-aws"></i></div>
+                    <div class="tech-icon" title="Linux"><i class="fab fa-linux"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What I Offer</span>
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">Professional solutions for your digital needs</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-tilt>
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with modern technologies and best practices for optimal performance.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Responsive Design</li>
+                        <li><i class="fas fa-check"></i> SEO Optimized</li>
+                        <li><i class="fas fa-check"></i> Fast Performance</li>
+                        <li><i class="fas fa-check"></i> Clean Code</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Apps</h3>
+                    <p>Cross-platform mobile applications with native performance and seamless user experience.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> iOS & Android</li>
+                        <li><i class="fas fa-check"></i> React Native</li>
+                        <li><i class="fas fa-check"></i> Cloud Integration</li>
+                        <li><i class="fas fa-check"></i> Push Notifications</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful and intuitive interfaces that provide exceptional user experiences and drive engagement.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> User Research</li>
+                        <li><i class="fas fa-check"></i> Wireframing</li>
+                        <li><i class="fas fa-check"></i> Prototyping</li>
+                        <li><i class="fas fa-check"></i> Visual Design</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300" data-tilt>
+                    <div class="service-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3>Discord Bots</h3>
+                    <p>Custom Discord bots with advanced features for community management and automation.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom Commands</li>
+                        <li><i class="fas fa-check"></i> Moderation Tools</li>
+                        <li><i class="fas fa-check"></i> API Integration</li>
+                        <li><i class="fas fa-check"></i> 24/7 Uptime</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400" data-tilt>
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable cloud infrastructure and deployment solutions for your applications.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> AWS/Azure Deployment</li>
+                        <li><i class="fas fa-check"></i> Docker & Kubernetes</li>
+                        <li><i class="fas fa-check"></i> CI/CD Pipelines</li>
+                        <li><i class="fas fa-check"></i> Monitoring & Scaling</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500" data-tilt>
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Integration</h3>
+                    <p>Incorporate artificial intelligence and machine learning into your existing applications.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> NLP & Computer Vision</li>
+                        <li><i class="fas fa-check"></i> Predictive Analytics</li>
+                        <li><i class="fas fa-check"></i> Chatbots & Assistants</li>
+                        <li><i class="fas fa-check"></i> Model Training</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing my best work and innovations</p>
+            </div>
+
+            <div class="projects-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web" data-aos="flip-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Project 1">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Web Application</div>
+                        <h3>AI-Powered Dashboard</h3>
+                        <p>Advanced analytics dashboard with real-time data visualization and AI insights.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>AI/ML</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-eye"></i> 2.5k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="web" data-aos="flip-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="Project 2">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">E-Commerce</div>
+                        <h3>Modern E-Shop Platform</h3>
+                        <p>Full-featured online shopping platform with payment integration and admin panel.</p>
+                        <div class="project-tags">
+                            <span>Vue.js</span>
+                            <span>Express</span>
+                            <span>Stripe</span>
+                            <span>Redis</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-eye"></i> 1.8k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="mobile" data-aos="flip-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Mobile App</div>
+                        <h3>Fitness Tracker Pro</h3>
+                        <p>Cross-platform mobile app for fitness tracking with social features.</p>
+                        <div class="project-tags">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Redux</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                            <span><i class="fas fa-eye"></i> 3.2k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="design" data-aos="flip-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop" alt="Project 4">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">UI/UX Design</div>
+                        <h3>Brand Identity System</h3>
+                        <p>Complete brand identity and design system for modern startups.</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>Illustrator</span>
+                            <span>Design System</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 5.0</span>
+                            <span><i class="fas fa-eye"></i> 1.5k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="web" data-aos="flip-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?w=600&h=400&fit=crop" alt="Project 5">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">SaaS Platform</div>
+                        <h3>Project Management Tool</h3>
+                        <p>Collaborative project management platform with real-time updates.</p>
+                        <div class="project-tags">
+                            <span>Next.js</span>
+                            <span>GraphQL</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-eye"></i> 2.1k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="other" data-aos="flip-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=400&fit=crop" alt="Project 6">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Discord Bot</div>
+                        <h3>Multi-Purpose Discord Bot</h3>
+                        <p>Feature-rich Discord bot with moderation, music, and utility commands.</p>
+                        <div class="project-tags">
+                            <span>Discord.js</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-eye"></i> 4.5k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card" data-category="web" data-aos="flip-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Project 7">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Data Analytics</div>
+                        <h3>Business Intelligence Dashboard</h3>
+                        <p>Real-time business intelligence dashboard with predictive analytics and data visualization.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>D3.js</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-eye"></i> 3.2k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card" data-category="mobile" data-aos="flip-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650992-ee4fd47df41f?w=600&h=400&fit=crop" alt="Project 8">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Mobile App</div>
+                        <h3>Health & Wellness Tracker</h3>
+                        <p>Comprehensive health and wellness tracking application with AI-powered recommendations.</p>
+                        <div class="project-tags">
+                            <span>Flutter</span>
+                            <span>Firebase</span>
+                            <span>TensorFlow</span>
+                            <span>HealthKit</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-eye"></i> 5.1k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="project-card" data-category="design" data-aos="flip-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop" alt="Project 9">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">UI/UX Design</div>
+                        <h3>Enterprise Design System</h3>
+                        <p>Complete design system for enterprise applications with accessibility compliance.</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>Storybook</span>
+                            <span>WCAG</span>
+                            <span>Design Tokens</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 5.0</span>
+                            <span><i class="fas fa-eye"></i> 2.3k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">My Milestones</span>
+                <h2 class="section-title">Achievements</h2>
+                <p class="section-subtitle">Celebrating success and progress</p>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card" data-aos="zoom-in">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>50+ Projects</h3>
+                    <p>Successfully completed</p>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>30+ Clients</h3>
+                    <p>Worldwide satisfaction</p>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>5.0 Rating</h3>
+                    <p>Average client rating</p>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>10+ Awards</h3>
+                    <p>Industry recognition</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <div class="cta-text">
+                    <h2>Ready to Start Your Project?</h2>
+                    <p>Let's collaborate and create something amazing together. Get in touch today!</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-btn primary-btn">
+                        <i class="fas fa-rocket"></i> Start a Project
+                    </a>
+                    <a href="javascript:void(0)" onclick="copyDiscord('tr_aytekin')" class="cta-btn secondary-btn">
+                        <i class="fab fa-discord"></i> Contact on Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <div class="newsletter-header">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to get latest updates, tutorials, and exclusive content straight to your inbox!</p>
+                </div>
+                <form class="newsletter-form">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="newsletter-btn">
+                            <span>Subscribe</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="newsletter-note">
+                        <i class="fas fa-shield-alt"></i> Your privacy is protected. No spam, ever.
+                    </p>
+                </form>
+                <div class="newsletter-stats">
+                    <div class="stat">
+                        <h4>5K+</h4>
+                        <p>Subscribers</p>
+                    </div>
+                    <div class="stat">
+                        <h4>150+</h4>
+                        <p>Weekly Reads</p>
+                    </div>
+                    <div class="stat">
+                        <h4>98%</h4>
+                        <p>Open Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What Clients Say</span>
+                <h2 class="section-title">Testimonials</h2>
+                <p class="section-subtitle">Feedback from amazing people</p>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/100?img=1" alt="Client">
+                        <div>
+                            <h4>John Smith</h4>
+                            <p>CEO, Tech Solutions</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Outstanding work! Delivered beyond expectations. Highly professional and creative developer."</p>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/100?img=5" alt="Client">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Amazing developer! Created exactly what we needed. Great communication throughout the project."</p>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-header">
+                        <img src="https://i.pravatar.cc/100?img=8" alt="Client">
+                        <div>
+                            <h4>Mike Chen</h4>
+                            <p>Startup Founder</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Exceptional quality and attention to detail. Would definitely work with again!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-subtitle">Let's create something amazing together</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <h3>Discord</h3>
+                        <p>tr_aytekin</p>
+                        <button onclick="copyDiscord('tr_aytekin')" class="copy-btn">Copy</button>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Germany 🇩🇪</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>contact@jrfahrenheit.dev</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" data-aos="fade-left">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email</label>
+                            <input type="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" placeholder="Project Inquiry" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Latest Updates</span>
+                <h2 class="section-title">Blog & News</h2>
+                <p class="section-subtitle">Thoughts, tutorials and insights</p>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card" data-aos="flip-left" data-tilt>
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop" alt="Blog">
+                        <span class="blog-category">Tutorial</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Nov 28, 2025</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3>Getting Started with React Hooks</h3>
+                        <p>Learn the fundamentals of React Hooks and how to use them effectively in your projects.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="flip-left" data-aos-delay="100" data-tilt>
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="Blog">
+                        <span class="blog-category">Development</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Nov 25, 2025</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h3>Building Scalable Node.js APIs</h3>
+                        <p>Best practices for creating robust and scalable backend services with Node.js.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="flip-left" data-aos-delay="200" data-tilt>
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop" alt="Blog">
+                        <span class="blog-category">Design</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Nov 20, 2025</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Modern UI Design Trends 2025</h3>
+                        <p>Explore the latest trends in user interface design and how to implement them.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="flip-left" data-aos-delay="300" data-tilt>
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&h=400&fit=crop" alt="Blog">
+                        <span class="blog-category">AI & ML</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Nov 15, 2025</span>
+                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                        </div>
+                        <h3>Integrating AI into Web Applications</h3>
+                        <p>A comprehensive guide on how to leverage AI and machine learning in modern web apps.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="flip-left" data-aos-delay="400" data-tilt>
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Blog">
+                        <span class="blog-category">Analytics</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Nov 10, 2025</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3>Web Performance Optimization</h3>
+                        <p>Essential techniques to make your websites blazing fast and improve user experience.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="flip-left" data-aos-delay="500" data-tilt>
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop" alt="Blog">
+                        <span class="blog-category">Security</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Nov 5, 2025</span>
+                            <span><i class="fas fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h3>Securing Your Web Applications</h3>
+                        <p>Best practices for web security and protecting your applications from common vulnerabilities.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="flip-left" data-aos-delay="600" data-tilt>
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Blog">
+                        <span class="blog-category">DevOps</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 30, 2025</span>
+                            <span><i class="fas fa-clock"></i> 11 min read</span>
+                        </div>
+                        <h3>CI/CD Pipeline Best Practices</h3>
+                        <p>How to build robust continuous integration and deployment pipelines for faster delivery.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="flip-left" data-aos-delay="700" data-tilt>
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop" alt="Blog">
+                        <span class="blog-category">Mobile</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 25, 2025</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3>Cross-Platform Mobile Development</h3>
+                        <p>Comparing Flutter, React Native, and Xamarin for your next mobile application.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="flip-left" data-aos-delay="800" data-tilt>
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="Blog">
+                        <span class="blog-category">Frontend</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 20, 2025</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>State Management in Modern JS Frameworks</h3>
+                        <p>Exploring Redux, Context API, Vuex, and other state management solutions.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımda Detayı Bölümü -->
+    <section id="about-detail" class="about-detail-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Daha Fazla Bilgi</span>
+                <h2 class="section-title">Hakkımda Detaylı</h2>
+                <p class="section-subtitle">Profesyonel yaşamım ve yeteneklerim hakkında daha fazla detay</p>
+            </div>
+
+            <div class="about-detail-content">
+                <div class="about-detail-text" data-aos="fade-right">
+                    <h3>Profesyonel Yolculuğum</h3>
+                    <p>5 yıldan fazla süredir yazılım geliştirme alanında çalışıyorum. Kariyerime frontend geliştirici olarak başladım ve zamanla full-stack geliştirici olmak için kendimi geliştirdim.</p>
+                    <p>Şu anda bir teknoloji şirketinde senior full-stack geliştirici olarak çalışıyorum. Projelerimde genellikle React, Node.js, MongoDB ve PostgreSQL teknolojilerini kullanıyorum.</p>
+                    <p>Açık kaynak topluluğuna katkıda bulunmayı ve sürekli öğrenmeyi seviyorum. Yeni teknolojilere her zaman meraklıyım ve bu teknolojileri projelerimde uygulamaktan büyük keyif alıyorum.</p>
+                    
+                    <h3>Eğitim</h3>
+                    <p>Bilgisayar Mühendisliği mezunuyum. Üniversite yıllarımda algoritmalar, veri yapıları ve yazılım mimarisi üzerine yoğunlaştım. Ayrıca çeşitli çevrimiçi platformlarda frontend ve backend geliştirme konularında eğitimler aldım.</p>
+                </div>
+
+                <div class="about-detail-stats" data-aos="fade-left">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>5+</h4>
+                            <p>Yıl Deneyim</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>50+</h4>
+                            <p>Tamamlanan Proje</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>30+</h4>
+                            <p>Mutlu Müşteri</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>10+</h4>
+                            <p>Alınan Ödül</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>𝙅𝙍|Fahrenheit¹⁹³³☪</h2>
+                    <p>Elite Full-Stack Developer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="javascript:void(0)" onclick="copyDiscord('tr_aytekin')"><i class="fab fa-discord"></i></a>
+                    <a href="https://steamcommunity.com/profiles/76561199172430315/" target="_blank"><i class="fab fa-steam"></i></a>
+                    <a href="https://github.com/ZradoW" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2018 𝙅𝙍|Fahrenheit. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> in Germany</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <div class="player-header">
+            <span class="player-title">Now Playing</span>
+            <button class="player-close" id="playerClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="player-content">
+            <div class="album-art">
+                <img src="https://i.imgur.com/placeholder.jpg" alt="Album Art" id="albumArt">
+                <div class="vinyl-effect"></div>
+            </div>
+            <div class="track-info">
+                <h4 id="trackTitle">Cyberpunk Dreams</h4>
+                <p id="trackArtist">Electronic Vibes</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="time-labels">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">3:45</span>
+            </div>
+            <div class="player-controls">
+                <button class="control-btn" id="prevBtn"><i class="fas fa-backward"></i></button>
+                <button class="control-btn play-btn" id="playBtn"><i class="fas fa-play"></i></button>
+                <button class="control-btn" id="nextBtn"><i class="fas fa-forward"></i></button>
+                <button class="control-btn" id="volumeBtn"><i class="fas fa-volume-up"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Player Toggle -->
+    <button class="music-toggle" id="musicToggle">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <img src="avatar.jpg" alt="Chat">
+                <span class="chat-status"></span>
+            </div>
+            <div>
+                <h4>JR|Fahrenheit</h4>
+                <p>Online</p>
+            </div>
+            <button class="chat-close" id="chatClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot">
+                <p>Hi! 👋 How can I help you today?</p>
+                <span class="message-time">Just now</span>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message..." id="chatInput">
+            <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+        <span class="chat-badge">1</span>
+    </button>
+
+    <!-- Weather Widget -->
+    <div class="weather-widget" id="weatherWidget">
+        <div class="weather-icon">🌤️</div>
+        <div class="weather-temp">25°C</div>
+        <div class="weather-location">Germany</div>
+    </div>
+
+    <!-- Pomodoro Timer -->
+    <div class="pomodoro-timer" id="pomodoroTimer">
+        <div class="timer-display">
+            <span id="timerMinutes">25</span>:<span id="timerSeconds">00</span>
+        </div>
+        <div class="timer-controls">
+            <button id="pomodoroStart"><i class="fas fa-play"></i></button>
+            <button id="pomodoroReset"><i class="fas fa-redo"></i></button>
+        </div>
+        <div class="timer-label">Focus Time</div>
+    </div>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher" id="languageSwitcher">
+        <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
+        <button class="lang-btn" data-lang="tr">🇹🇷 TR</button>
+    </div>
+
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+        <i class="fas fa-users"></i>
+        <span id="visitorCount">1337</span> visitors
+    </div>
+
+    <!-- Quick Tools Panel -->
+    <div class="quick-tools" id="quickTools">
+        <button class="tool-btn" id="qrGenerator" title="QR Code Generator">
+            <i class="fas fa-qrcode"></i>
+        </button>
+        <button class="tool-btn" id="colorPicker" title="Color Picker">
+            <i class="fas fa-palette"></i>
+        </button>
+        <button class="tool-btn" id="calculator" title="Calculator">
+            <i class="fas fa-calculator"></i>
+        </button>
+        <button class="tool-btn" id="notepad" title="Quick Notes">
+            <i class="fas fa-sticky-note"></i>
+        </button>
+        <button class="tool-btn" id="weatherToggle" title="Weather">
+            <i class="fas fa-cloud-sun"></i>
+        </button>
+        <button class="tool-btn" id="pomodoroToggle" title="Pomodoro Timer">
+            <i class="fas fa-clock"></i>
+        </button>
+        <button class="tool-btn" id="quoteToggle" title="Daily Quote">
+            <i class="fas fa-quote-right"></i>
+        </button>
+    </div>
+
+    <!-- Mini Game (Snake) -->
+    <div class="mini-game" id="miniGame">
+        <div class="game-header">
+            <h3>Snake Game 🎮</h3>
+            <button class="game-close" id="gameClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="game-score">Score: <span id="gameScore">0</span></div>
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+        <div class="game-controls">
+            <button id="gameStart">Start</button>
+            <button id="gameRestart">Restart</button>
+        </div>
+    </div>
+
+    <!-- Quote Generator -->
+    <div class="quote-widget" id="quoteWidget">
+        <div class="quote-text" id="quoteText">"The only way to do great work is to love what you do."</div>
+        <div class="quote-author" id="quoteAuthor">- Steve Jobs</div>
+        <button class="quote-refresh" id="quoteRefresh"><i class="fas fa-sync"></i></button>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="main.js"></script>
+</body>
+</html>
